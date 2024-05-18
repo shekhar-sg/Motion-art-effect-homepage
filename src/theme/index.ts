@@ -14,9 +14,9 @@ const theme = createTheme({
         values: {
             xs: 0,
             sm: 320,
-            md: 766,
-            lg: 1024,
-            xl: 1366,
+            md: 767,
+            lg: 1025,
+            xl: 1367,
         }
     },
     typography: {
@@ -41,15 +41,15 @@ const theme = createTheme({
                     fontSize: "16px",
                     fontWeight: "500",
                 },
+                subtitle1: {
+                    fontSize: "14px",
+                    fontWeight: "400",
+                    fontFamily: "Sora",
+                },
                 subtitle2: {
                     fontSize: "18px",
                     fontWeight: "300",
                     fontFamily: "Outfit",
-                },
-                subtitle1:{
-                    fontSize: "14px",
-                    fontWeight: "400",
-                    fontFamily: "Sora",
                 },
                 h5: {
                     fontSize: "22px",
@@ -70,7 +70,20 @@ const theme = createTheme({
                         },
                         fontFamily: "Sora",
                         fontWeight: "500",
-                    })
+                    }),
+                },
+                {
+                    props: {variant: "h2"},
+                    style: ({theme}) => theme.unstable_sx({
+                        fontSize: {
+                            xs: "25px",
+                            md: "30px",
+                            lg: "35px",
+                            xl: "40px",
+                        },
+                        fontFamily: "Sora",
+                        fontWeight: "600",
+                    }),
                 }
             ]
         }
