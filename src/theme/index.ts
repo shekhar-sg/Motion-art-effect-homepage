@@ -97,6 +97,10 @@ const theme = createTheme({
                         },
                         fontFamily: "Sora",
                         fontWeight: "600",
+                        textAlign:{
+                            xs: "center",
+                            md: "center",
+                        }
                     }),
                 },
             ]

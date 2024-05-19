@@ -40,7 +40,11 @@ const Section_4 = () => {
                     },
                     justifyContent: "center",
                     alignItems: "center",
-                    height:"680px"
+                    height: {
+                        xs: "auto",
+                        md: "580px",
+                        lg: "680px",
+                    }
                 }}>
                 {
                     data.map((item, index) => (
