@@ -34,7 +34,10 @@ const theme = createTheme({
         MuiTypography: {
             styleOverrides: {
                 body1: ({theme}) => theme.unstable_sx({
-                    fontSize: "18px",
+                    fontSize: {
+                        xs: "16px",
+                        md: "18px",
+                    },
                     fontWeight: "500",
                 }),
                 body2: {
@@ -53,7 +56,7 @@ const theme = createTheme({
                 },
                 h5: {
                     fontSize: "22px",
-                    fontWeight: "400",
+                    fontWeight: "500",
                     fontFamily: "outfit",
                     lineHeight: "1",
                 },
@@ -84,7 +87,18 @@ const theme = createTheme({
                         fontFamily: "Sora",
                         fontWeight: "600",
                     }),
-                }
+                },
+                {
+                    props: {variant: "h4"},
+                    style: ({theme}) => theme.unstable_sx({
+                        fontSize: {
+                            xs: "20px",
+                            md: "25px",
+                        },
+                        fontFamily: "Sora",
+                        fontWeight: "600",
+                    }),
+                },
             ]
         }
     }
