@@ -25,37 +25,41 @@ const data: Section_4Props[] = [
 const Section_4 = () => {
     return (
         <Stack sx={{
-            background: "gray",
             justifyContent: "center",
             alignItems: "center",
+            gap: 8,
         }}>
-            <Typography variant={"h2"} textAlign={"center"} maxWidth={"620px"}>
+            <Typography variant={"h2"} textAlign={"center"} maxWidth={{
+                xs: "80%",
+                md: "55%",
+            }}>
                 Apply On Any Section Or Enable For Whole Page
             </Typography>
             <Stack
-                sx={{
-                    flexDirection: {
-                        xs: "column",
-                        md: "row",
-                    },
-                    justifyContent: "center",
-                    alignItems: "center",
-                    height: {
-                        xs: "auto",
-                        md: "580px",
-                        lg: "680px",
-                    }
-                }}>
+                flexDirection={{
+                    xs: "column",
+                    md: "row",
+                }}
+                justifyContent={"center"}
+                alignItems={"center"}
+                height={{
+                    xs: "auto",
+                    md: "580px",
+                    lg: "680px",
+                }}
+                gap={3}
+            >
                 {
                     data.map((item, index) => (
                         <DetailCard key={index} title={item.title} description={item.description} image={item.image}
-                                    alignSelf={index===0 ? "flex-start" : "flex-end"}
+                                    alignSelf={index === 0 ? "flex-start" : "flex-end"}
                         />
                     ))
                 }
             </Stack>
         </Stack>
-    );
+    )
+        ;
 };
 
 export default Section_4;

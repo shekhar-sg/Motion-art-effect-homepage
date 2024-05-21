@@ -13,8 +13,8 @@ const avatars = [
 ]
 const Section_2 = () => {
     return (
-        <Stack alignItems={"center"} gap={8}>
-            <Typography variant={"h5"}>Trusted by thousands of users around the world</Typography>
+        <Stack alignItems={"center"} gap={8} padding={"10px"} position={"relative"}>
+            <Typography variant={"h5"} textAlign={"center"}>Trusted by thousands of users around the world</Typography>
             <Grid2 width={"100%"} container spacing={5}
                    sx={{
                        justifyContent: {
@@ -28,6 +28,10 @@ const Section_2 = () => {
                         <Grid2 key={index} gap={1} sm={12} md={6} lg={4}
                                sx={{
                                    display: "flex",
+                                   flexDirection:{
+                                        xs: "column",
+                                        sm: "row",
+                                      },
                                    justifyContent: "center",
                                    alignItems: "center",
                                }}

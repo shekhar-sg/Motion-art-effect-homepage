@@ -1,4 +1,5 @@
 import {Box, Stack, StackProps, Typography} from "@mui/material";
+import theme from "../../theme";
 
 interface DetailCardProps extends StackProps {
     title: string;
@@ -7,23 +8,26 @@ interface DetailCardProps extends StackProps {
 }
 
 const DetailCard = (props: DetailCardProps) => {
-    const {title, description, image,...restProps} = props;
+    const {title, description, image, ...restProps} = props;
     return (
         <Stack sx={{
-            padding: "32px",
-            borderRadius: "24px",
-            margin: "20px",
-            boxShadow: "0px 0px 10px 0px rgba(0,0,0,0.1)",
+            padding: 4,
+            gap: 2,
+            borderRadius: "18px",
+            textAlign:{
+                xs: "center",
+                sm: "left",
+            },
+            background: theme.palette.gradient_2.main,
+            color: theme.palette.primary.main,
+            boxShadow: `inset 0px 1px 1px ${theme.palette.primary.main}`,
             width: {
                 xs: "400",
                 md: "30%%",
             },
-            justifyContent: "center",
-            alignItems: "center",
-            gap: "20px",
         }} {...restProps}>
-            <Typography variant={"h4"} alignSelf={"self-start"}>{title}</Typography>
-            <Typography variant={"body1"}>{description}</Typography>
+            <Typography variant={"h4"}>{title}</Typography>
+            <Typography variant={"body2"}>{description}</Typography>
             <Box sx={{
                 borderRadius: "24px",
                 marginX: "auto",
