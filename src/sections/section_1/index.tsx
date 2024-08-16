@@ -27,6 +27,7 @@ const Section_1 = () => {
                 md: "left",
             }}
             position={"relative"}
+            // sx={{pointerEvents:"auto"}}
         >
             <Stack
                 width={{
