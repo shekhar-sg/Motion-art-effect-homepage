@@ -1,4 +1,4 @@
-import {Box, Stack} from "@mui/material";
+import {Stack} from "@mui/material";
 import Section_1 from "./sections/section_1";
 import Section_2 from "./sections/section_2";
 import Section_3 from "./sections/section_3";
@@ -22,7 +22,7 @@ const App = () => {
         const canvas = canvasRef.current
         const main = mainRef.current
 
-        if (main){
+        if (main) {
             main.addEventListener('click', handleMouseEvent)
             main.addEventListener('mousemove', handleMouseEvent)
             main.addEventListener('mousedown', handleMouseEvent)
@@ -41,8 +41,8 @@ const App = () => {
             })
         }
 
-        return ()=>{
-            if (main){
+        return () => {
+            if (main) {
                 main.removeEventListener('click', handleMouseEvent);
                 main.removeEventListener('mousemove', handleMouseEvent);
                 main.removeEventListener('mousedown', handleMouseEvent);
@@ -54,25 +54,25 @@ const App = () => {
     }, [canvasRef])
 
     return (
-        <Box>
+        <>
             <canvas
                 ref={canvasRef}
-                    style={{
-                        position: "fixed",
-                        inset: 0,
-                        zIndex: 0,
-                        width: "100%",
-                        height: "100%",
-                    }}
+                style={{
+                    position: "fixed",
+                    inset: 0,
+                    zIndex: 0,
+                    width: "100%",
+                    height: "100%",
+                }}
             />
             <Stack ref={mainRef}
-                maxWidth={"1280px"}
-                marginX={"auto"}
-                paddingX={"14px"}
-                gap={12}
-                zIndex={1}
+                   maxWidth={"1280px"}
+                   marginX={"auto"}
+                   paddingX={"14px"}
+                   gap={12}
+                   zIndex={1}
                 // sx={{pointerEvents: "none"}}
-                position={"relative"}
+                   position={"relative"}
             >
                 <Section_1/>
                 <Section_2/>
@@ -82,12 +82,12 @@ const App = () => {
                 <Section_6/>
             </Stack>
             <Footer/>
-        </Box>
+        </>
     );
 }
 export default App;
 
-const propagateMouseEvent =(event: MouseEvent, targetRef: RefObject<HTMLElement>) => {
+const propagateMouseEvent = (event: MouseEvent, targetRef: RefObject<HTMLElement>) => {
     const target = targetRef.current;
     if (target) {
         target.dispatchEvent(new MouseEvent(event.type, event));

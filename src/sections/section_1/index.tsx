@@ -26,7 +26,7 @@ const Section_1 = () => {
                 sm: "left",
                 md: "left",
             }}
-            position={"relative"}
+            // position={"relative"}
             // sx={{pointerEvents:"auto"}}
         >
             <Stack
